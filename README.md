@@ -8,6 +8,6 @@
     $ sudo python3 sshoney.py
 ####
     $ cat credentials.txt 
-        user:asdf
-        user:user
-        user:jklj
+    127.0.0.1:user:asdfasdf asdf asdfa sdf
+    127.0.0.1:user:#@#$@#$@#$f
+    127.0.0.1:user:';oij';

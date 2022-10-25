@@ -36,9 +36,11 @@ def main():
         try:
             client, address = sock.accept()
             transport = paramiko.Transport(client)
+            transport.local_version = 'SSH-2.0-OpenSSH_7.4p1 Raspbian-10+deb9u2'
             transport.add_server_key(par_rsa_key)
             server = SshServer()
             transport.start_server(server=server)
+
         except Exception as e:
             print(e)
 

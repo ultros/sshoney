@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import socket
 import paramiko
 
@@ -28,7 +29,7 @@ class SshServer(paramiko.ServerInterface):
 def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # Reuse Address in case of "Address already in use"
-    sock.bind(('127.0.0.1', 22))
+    sock.bind(('', 22))
     sock.listen(100)
 
     while True:

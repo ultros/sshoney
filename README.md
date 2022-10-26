@@ -11,3 +11,18 @@
     127.0.0.1:user:asdfasdf asdf asdfa sdf
     127.0.0.1:user:#@#$@#$@#$f
     127.0.0.1:user:';oij';
+
+### Daemon Skeleton
+
+    [Unit]
+    Description=sshoney.py
+    After=network.target
+
+    [Service]
+    Type=simple
+    WorkingDirectory=/path/to/sshoney/
+    ExecStart=python3.11 sshoney.py
+    Restart=always
+
+    [Install]
+    WantedBy=multi-user.target

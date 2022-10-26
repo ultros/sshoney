@@ -26,3 +26,10 @@
 
     [Install]
     WantedBy=multi-user.target
+
+### Daemon Setup (Debian)
+    # vim /etc/systemd/system/sshoney.service (Daemon Skeleton)
+    # systemctl daemon-reload
+    # systemctl enable /etc/systemd/system/sshoney.service
+    # systemctl start /etc/systemd/system/sshoney.service
+    # systemctl status /etc/systemd/system/sshoney.service

@@ -22,7 +22,7 @@ class SshServer(paramiko.ServerInterface):
         with open('credentials.txt', 'a') as file_obj:
             file_obj.write(f"{self.ipaddress}:{username}:{password}\n")
 
-        return paramiko.AUTH_FAILED  # Always fail authentication.
+        return paramiko.common.AUTH_FAILED  # Always fail authentication.
 
 
 def main():

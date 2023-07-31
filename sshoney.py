@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import socket
 import paramiko
+import datetime
 
 # Use ssh-keygen to generate a key pair and provide the path to the private key here.
 rsa_key = 'test'  # RSA host key
@@ -20,14 +21,14 @@ class SshServer(paramiko.ServerInterface):
         """Logs the attempted username and password.
         """
         with open('credentials.txt', 'a') as file_obj:
-            file_obj.write(f"{self.ipaddress}:{username}:{password}\n")
+            file_obj.write(f"{datetime.datetime.now()}:{self.ipaddress}:{username}:{password}\n")
 
         return paramiko.common.AUTH_FAILED  # Always fail authentication.
 
 
 def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # Reuse Address in case of "Address already in use"
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     sock.bind(('', 22))
     sock.listen()
 

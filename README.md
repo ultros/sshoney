@@ -21,15 +21,15 @@
     [Service]
     Type=simple
     WorkingDirectory=/path/to/sshoney/
-    ExecStart=python3.11 sshoney.py
+    ExecStart=python3 /path/to/sshoney
     Restart=always
 
     [Install]
     WantedBy=multi-user.target
 
 ### Daemon Setup (Debian)
-    # vim /etc/systemd/system/sshoney.service (Daemon Skeleton)
-    # systemctl daemon-reload
+    # vim /etc/systemd/system/sshoney.service
+
     # systemctl enable /etc/systemd/system/sshoney.service
     # systemctl start /etc/systemd/system/sshoney.service
     # systemctl status /etc/systemd/system/sshoney.service

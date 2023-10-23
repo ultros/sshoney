@@ -12,6 +12,9 @@
     127.0.0.1:user:#@#$@#$@#$f
     127.0.0.1:user:';oij';
 
+
+### For Installation
+    pip3 install -r /opt/sshoney/requirements.txt
 ### Daemon Skeleton
 
     [Unit]
@@ -20,7 +23,6 @@
 
     [Service]
     Type=simple
-    WorkingDirectory=/path/to/sshoney/
     ExecStart=/usr/bin/python3 /path/to/sshoney
     Restart=always
 

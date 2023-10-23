@@ -15,6 +15,7 @@
 
 ### For Installation
     pip3 install -r /opt/sshoney/requirements.txt
+
 ### Daemon Skeleton
 
     [Unit]
@@ -23,7 +24,7 @@
 
     [Service]
     Type=simple
-    ExecStart=/usr/bin/python3 /path/to/sshoney
+    ExecStart=/usr/bin/python3 /opt/sshoney/sshoney.py
     Restart=always
 
     [Install]
@@ -31,7 +32,11 @@
 
 ### Daemon Setup (Debian)
     # vim /etc/systemd/system/sshoney.service
-
     # systemctl enable /etc/systemd/system/sshoney.service
     # systemctl start /etc/systemd/system/sshoney.service
     # systemctl status /etc/systemd/system/sshoney.service
+
+### sshoney.py script changes
+   You will need to provide the full path to credentials.txt.  
+   E.g. the default script assumes that sshoney has been cloned to "/opt/sshoney/".  
+   with open('/opt/sshoney/credentials.txt', 'a') as file_obj:  

@@ -20,7 +20,7 @@ class SshServer(paramiko.ServerInterface):
     def check_auth_password(self, username, password):
         """Logs the attempted username and password.
         """
-        with open('credentials.txt', 'a') as file_obj:
+        with open('/opt/sshoney/credentials.txt', 'a') as file_obj:  # change the credentials location here
             file_obj.write(f"{datetime.datetime.now()}:{self.ipaddress}:{username}:{password}\n")
 
         return paramiko.common.AUTH_FAILED  # Always fail authentication.

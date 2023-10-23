@@ -21,7 +21,7 @@
     [Service]
     Type=simple
     WorkingDirectory=/path/to/sshoney/
-    ExecStart=python3 /path/to/sshoney
+    ExecStart=/usr/bin/python3 /path/to/sshoney
     Restart=always
 
     [Install]

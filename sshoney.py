@@ -4,7 +4,7 @@ import paramiko
 import datetime
 
 # Use ssh-keygen to generate a key pair and provide the path to the private key here.
-rsa_key = 'test'  # RSA host key
+rsa_key = '/opt/sshoney/test'  # RSA host key
 par_rsa_key = paramiko.RSAKey(filename=rsa_key)
 
 
